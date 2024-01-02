@@ -1,0 +1,31 @@
+module decoder #(parameter add_width = 5, parameter data_width = 32)(clock,reset,mcode,addr_rs1,addr_rs2,addr_rd,func7,func3,opcode,immediate);
+ input clock,reset;
+ input [data_width-1:0]mcode;
+ 
+ output reg[add_width-1:0]addr_rs1,addr_rs2,addr_rd;
+ output reg[6:0]func7,opcode;
+ output reg[2:0]func3;
+ output reg [11:0]immediate;
+ //output reg [4:0]imm5s;
+ //output reg [6:0] imm7s;
+ //output reg imm11b;
+ //output reg imm12b;
+ //output reg [3:0]imm4b;
+ //output reg [5:0]imm6b;
+ assign opcode=mcode[6:0];
+ //always_comb
+ always_ff @(posedge clock & opcode) 
+  begin
+  case(opcode)
+   51:begin func3=mcode[14:12]; addr_rs1=mcode[19:15]; addr_rs2=mcode[24:20]; addr_rd=mcode[11:7]; func7=mcode[31:25];end //add
+   19:begin  addr_rd=mcode[11:7]; func3=mcode[14:12]; addr_rs1=mcode[19:15]; immediate=mcode[31:20];end //addi
+   3:begin  addr_rd=mcode[11:7]; func3=mcode[14:12]; addr_rs1=mcode[19:15]; immediate=mcode[31:20];end //load
+	35:begin func3=mcode[14:12]; addr_rs1=mcode[19:15]; addr_rs2=mcode[24:20];end //store
+	103:begin func3=mcode[14:12]; addr_rs1=mcode[19:15]; addr_rs2=mcode[24:20];end//beq
+   default:begin func3=3'bxxx; addr_rs1=5'bx; addr_rs2=5'bx; addr_rd=5'bx; func7=7'bx;immediate=12'bx;end 
+ endcase
+ end
+
+
+
+endmodule
