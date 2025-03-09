@@ -173,7 +173,7 @@ endmodule
 
 ## Register File
 
-Implements general-purpose registers.
+Implements general-purpose registers. A small snippet of the code below. Detailed code is in files section
 ```verilog
 module regfile(
     input clock,
