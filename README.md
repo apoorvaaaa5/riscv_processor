@@ -37,6 +37,41 @@ The processor follows a standard **von Neumann architecture** with the following
 ### 5. Write Back (WB)
 - Writes computed results back to registers
 
+## How different modules fit into the five-stage RISC-V pipeline:
+
+    Instruction Fetch (IF)
+        PC (Program Counter)
+        Instruction Memory
+        PC + 4 Adder
+        PCSrc MUX
+
+    Instruction Decode (ID)
+        Decoder
+        Register File (Reg File)
+        Sign Extension
+
+    Execute (EX)
+        ALU Src MUX
+        PC + Branch Offset Adder
+        ALU Unit
+        Control Unit
+
+    Memory Access (MEM)
+        Data Memory
+
+    Write Back (WB)
+        Write Back MUX
+
+## Control Signals in the Control Unit:
+
+    RegWrite
+    ALUSrc
+    MemRead
+    MemWrite
+    MemToReg
+    Branch
+    ALU Operation
+
 ## ALU (Arithmetic Logic Unit)
 The ALU is responsible for performing arithmetic and logical operations in the **Execute (EX)** stage of the pipeline. Below is the Verilog implementation of the ALU:
 
