@@ -171,6 +171,40 @@ module datamemory(clk,memread,memwrite,a,wd,rd);
 endmodule
 ```
 
+## Register File
+
+Implements general-purpose registers.
+```verilog
+module regfile(
+    input clock,
+    input reset,
+	 input regwrite,
+    input [4:0] read_reg_num1,
+    input [4:0] read_reg_num2,
+    input [4:0] write_reg,
+    input [31:0] write_data,
+    output [31:0] read_data1,
+    output [31:0] read_data2
+    
+);
+```
+
+## Next PC Calculation
+
+Handles branch operations and PC updates.
+```verilog 
+module nextpc (pc,imm,pcsrc,pc_next);
+	input logic pcsrc;
+	input logic [31:0] imm,pc;
+	output logic [31:0] pc_next;
+
+always_comb
+begin
+	pc_next=pcsrc?(pc+imm):(pc+32'h00000004);
+end
+endmodule
+```
+
 ## Sign Extension
 
 The **Sign Extension** module is used to extend immediate values from a smaller bit-width to a 32-bit representation while preserving the sign.
