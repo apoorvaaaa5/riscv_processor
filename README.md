@@ -107,23 +107,23 @@ endmodule
 ```
 ### How the Control Unit Works
 
-It takes opcode, funct3, and funct7 fields as inputs from the instruction.
+- It takes opcode, funct3, and funct7 fields as inputs from the instruction.
 
-Based on these values, it sets control signals that dictate processor behavior:
+- Based on these values, it sets control signals that dictate processor behavior:
 
-- regwrite: Enables writing to registers.
+	- regwrite: Enables writing to registers.
 
-- memread: Signals a memory read operation.
+	- memread: Signals a memory read operation.
 
-- memwrite: Signals a memory write operation.
+	- memwrite: Signals a memory write operation.
 
-- branch: Indicates a branch instruction.
+	- branch: Indicates a branch instruction.
 
-- alusrc: Determines whether the ALU's second operand is a register or immediate value.
+	- alusrc: Determines whether the ALU's second operand is a register or immediate value.
 
-- memtoreg: Controls data flow from memory to registers.
+	- memtoreg: Controls data flow from memory to registers.
 
-- alu_opera: Specifies the ALU operation.
+	- alu_opera: Specifies the ALU operation.
 
 ## Supported Instructions
 Our implementation currently supports:
