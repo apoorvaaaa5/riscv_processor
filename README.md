@@ -164,6 +164,16 @@ Memory Operations: LOAD, STORE
 
 Control Flow: JUMP, BRANCH
 
+Future Enhancements
+
+Implement pipelining for improved performance
+
+Add support for floating-point operations
+
+Implement a cache system
+
+Extend to 64-bit architecture (RV64I)
+
 # riscv_processor
 RTL VIEW OF PROCESSOR: 
 
