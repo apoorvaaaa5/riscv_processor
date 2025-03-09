@@ -59,7 +59,18 @@ module alu (alu_control,inp1,inp2,alu_result,zeroflag);
     end
 endmodule
 ```
+### How the ALU fits into the pipeline
 
+- The ALU takes two 32-bit inputs (inp1 and inp2) from the register file.
+
+- The alu_control signal determines the operation to perform (e.g., ADD, SUB, AND, OR).
+
+- The result is computed and stored in alu_result.
+
+- The zeroflag is set when the result is zero (used for branch instructions).
+
+- The computed result is either stored in a register (if an arithmetic operation) or used for memory operations.
+  
 ## ALU Source MUX (ALUSrcMUX2)
 The **ALUSrcMUX2** module is responsible for selecting the second operand input for the ALU. It determines whether the ALU should receive a **register value (d0)** or an **immediate value (d1)** based on a selection signal (s).
 
