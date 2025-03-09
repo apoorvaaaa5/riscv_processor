@@ -261,7 +261,7 @@ endmodule
 - Extend to **64-bit architecture (RV64I)**
 
 ## References
-- [Computer Organization and Design RISC-V Edition – David A. Patterson, John L. Hennessy]
+- Computer Organization and Design RISC-V Edition – David A. Patterson, John L. Hennessy
 
 ---
 
