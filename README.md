@@ -285,4 +285,4 @@ endmodule
 ![Register File](https://github.com/apoorvaaaa5/riscv_processor/assets/117642634/74d72bc4-533b-4bc3-93f6-2d0b230fb32f)
 
 ## Hand drawn version of Processor with signals
-![Pipeline Stages](https://github.com/apoorvaaaa5/riscv_processor/assets/117642634/30b448c2-db94-4c6c-8bde-cfd4c0d5a0b3)
+![Image](https://github.com/user-attachments/assets/5a69f22f-a96d-42eb-b6ea-d60772299828)
